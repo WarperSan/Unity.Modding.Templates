@@ -7,7 +7,7 @@
             <PluginVersion Condition="'$(PluginVersion)' == ''">$(Version)</PluginVersion>
 
             <GeneratedText><![CDATA[
-internal static class PluginInfo
+public static class PluginInfo
 {
   public const string PLUGIN_GUID = "$(PluginGUID)"%3B
   public const string PLUGIN_NAME = "$(PluginName)"%3B

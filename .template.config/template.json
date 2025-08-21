@@ -51,7 +51,8 @@
       "modifiers": [
         {
           "exclude": [
-            ".idea/**"
+            ".idea/**",
+            ".git/**"
           ]
         },
         {

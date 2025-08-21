@@ -27,6 +27,19 @@ public class Plugin : BaseUnityPlugin
         Logger.LogInfo($"{PluginInfo.PLUGIN_GUID} v{PluginInfo.PLUGIN_VERSION} has loaded!");
 #endif
     }
+
+    private void OnDestroy()
+    {
+#if UseHarmony
+        Unpatch();
+
+#endif
+#if UseLogger
+        Log.Info($"{PluginInfo.PLUGIN_GUID} v{PluginInfo.PLUGIN_VERSION} has unloaded!");
+#else
+        Logger.LogInfo($"{PluginInfo.PLUGIN_GUID} v{PluginInfo.PLUGIN_VERSION} has unloaded!");
+#endif
+    }
 #if UseHarmony
 
     #region Harmony
@@ -47,6 +60,7 @@ public class Plugin : BaseUnityPlugin
     private void Unpatch()
     {
         Harmony?.UnpatchSelf();
+        Harmony = null;
         
 #if UseLogger
         Log.Debug("Plugin unpatched!");

@@ -8,7 +8,7 @@ using Log = UnityModTemplate.Helpers.Log;
 
 namespace UnityModTemplate;
 
-[BepInPlugin(PluginInfo.PLUGIN_GUID, PluginInfo.PLUGIN_NAME, PluginInfo.PLUGIN_VERSION)]
+[BepInPlugin(MyPluginInfo.PLUGIN_GUID, MyPluginInfo.PLUGIN_NAME, MyPluginInfo.PLUGIN_VERSION)]
 public class Plugin : BaseUnityPlugin
 {
     private void Awake()
@@ -22,9 +22,9 @@ public class Plugin : BaseUnityPlugin
 
 #endif
 #if UseLogger
-        Log.Info($"{PluginInfo.PLUGIN_GUID} v{PluginInfo.PLUGIN_VERSION} has loaded!");
+        Log.Info($"{MyPluginInfo.PLUGIN_GUID} v{MyPluginInfo.PLUGIN_VERSION} has loaded!");
 #else
-        Logger.LogInfo($"{PluginInfo.PLUGIN_GUID} v{PluginInfo.PLUGIN_VERSION} has loaded!");
+        Logger.LogInfo($"{MyPluginInfo.PLUGIN_GUID} v{MyPluginInfo.PLUGIN_VERSION} has loaded!");
 #endif
     }
 
@@ -35,9 +35,9 @@ public class Plugin : BaseUnityPlugin
 
 #endif
 #if UseLogger
-        Log.Info($"{PluginInfo.PLUGIN_GUID} v{PluginInfo.PLUGIN_VERSION} has unloaded!");
+        Log.Info($"{MyPluginInfo.PLUGIN_GUID} v{MyPluginInfo.PLUGIN_VERSION} has unloaded!");
 #else
-        Logger.LogInfo($"{PluginInfo.PLUGIN_GUID} v{PluginInfo.PLUGIN_VERSION} has unloaded!");
+        Logger.LogInfo($"{MyPluginInfo.PLUGIN_GUID} v{MyPluginInfo.PLUGIN_VERSION} has unloaded!");
 #endif
     }
 #if UseHarmony
@@ -48,7 +48,7 @@ public class Plugin : BaseUnityPlugin
 
     private void Patch()
     {
-        Harmony = new Harmony(PluginInfo.PLUGIN_GUID);
+        Harmony = new Harmony(MyPluginInfo.PLUGIN_GUID);
         
         // Harmony.PatchAll(typeof(Patches.Template_Patches));
 

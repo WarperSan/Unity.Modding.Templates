@@ -7,11 +7,16 @@
             <PluginVersion Condition="'$(PluginVersion)' == ''">$(Version)</PluginVersion>
 
             <GeneratedText><![CDATA[
-public static class PluginInfo
+#pragma warning disable CS1591
+
+namespace $(RootNamespace)
 {
-  public const string PLUGIN_GUID = "$(PluginGUID)"%3B
-  public const string PLUGIN_NAME = "$(PluginName)"%3B
-  public const string PLUGIN_VERSION = "$(PluginVersion)"%3B
+    public class MyPluginInfo
+    {
+      public const string PLUGIN_GUID = "$(PluginGUID)"%3B
+      public const string PLUGIN_NAME = "$(PluginName)"%3B
+      public const string PLUGIN_VERSION = "$(PluginVersion)"%3B
+    }
 }
 ]]></GeneratedText>
             <GeneratedFilePath>$(IntermediateOutputPath)PluginInfo.cs</GeneratedFilePath>

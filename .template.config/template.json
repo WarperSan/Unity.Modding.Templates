@@ -54,6 +54,12 @@
             ".idea/**",
             ".git/**"
           ]
+        },
+        {
+          "condition": "(!UseHarmony)",
+          "exclude": [
+            "src/Patches/Example_Patches.cs"
+          ]
         }
       ]
     }

@@ -21,13 +21,13 @@
     },
     "UseLogger": {
       "type": "parameter",
-      "description": "Defines if the project includes a default logger implementation.",
+      "description": "Defines if the project includes a default logging implementation.",
       "datatype": "bool",
       "defaultValue": true
     },
     "UseHarmony": {
       "type": "parameter",
-      "description": "Defines if the project includes the basic Harmony support.",
+      "description": "Defines if the project includes a default patching implementation using Harmony.",
       "datatype": "bool",
       "defaultValue": true
     },

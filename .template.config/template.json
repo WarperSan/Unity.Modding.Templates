@@ -21,7 +21,7 @@
     },
     "UseLogger": {
       "type": "parameter",
-      "description": "Defines if the project includes the basic logger support.",
+      "description": "Defines if the project includes a default logger implementation.",
       "datatype": "bool",
       "defaultValue": true
     },
@@ -53,12 +53,6 @@
           "exclude": [
             ".idea/**",
             ".git/**"
-          ]
-        },
-        {
-          "condition": "(!UseLogger)",
-          "exclude": [
-            "src/Helpers/Log.cs"
           ]
         },
         {

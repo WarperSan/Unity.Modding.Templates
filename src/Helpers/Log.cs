@@ -1,20 +1,18 @@
+#if UseLogger
 using System.Text;
 using BepInEx.Logging;
+#endif
 
 namespace UnityModTemplate.Helpers;
 
 /// <summary>
-/// Class helping for logging stuff
+///     Class helping for logging stuff
 /// </summary>
 internal static class Log
 {
-    private static ManualLogSource? _logger;
-
-    /// <summary>
-    /// Assigns the current logger to the given logger
-    /// </summary>
-    public static void SetLogger(ManualLogSource? logger) => _logger = logger;
-
+#if UseLogger
+    private static readonly ManualLogSource? _logger = Logger.CreateLogSource(MyPluginInfo.PLUGIN_GUID);
+    
     private static void LogSelf(object?[] data, LogLevel level)
     {
         if (_logger == null)
@@ -31,19 +29,48 @@ internal static class Log
             if (i < data.Length - 1)
                 message.Append(' ');
         }
-        
+
         _logger.Log(level, message.ToString());
     }
+#endif
 
-    /// <inheritdoc cref="BepInEx.Logging.ManualLogSource.LogDebug"/>
-    public static void Debug(params object?[] data) => LogSelf(data, LogLevel.Debug);
-    
-    /// <inheritdoc cref="BepInEx.Logging.ManualLogSource.LogInfo"/>
-    public static void Info(params object?[] data) => LogSelf(data, LogLevel.Message);
-    
-    /// <inheritdoc cref="BepInEx.Logging.ManualLogSource.LogWarning"/>
-    public static void Warning(params object?[] data) => LogSelf(data, LogLevel.Warning);
-    
-    /// <inheritdoc cref="BepInEx.Logging.ManualLogSource.LogError"/>
-    public static void Error(params object?[] data) => LogSelf(data, LogLevel.Error);
+    /// <summary>
+    ///     Logs information for developers that helps to debug the mod
+    /// </summary>
+    public static void Debug(params object?[] data)
+    {
+#if UseLogger
+        LogSelf(data, LogLevel.Debug);
+#endif
+    }
+
+    /// <summary>
+    ///     Logs information for players to know important steps of the mod
+    /// </summary>
+    public static void Info(params object?[] data)
+    {
+#if UseLogger
+        LogSelf(data, LogLevel.Message);
+#endif
+    }
+
+    /// <summary>
+    ///     Logs information for players to warn them about an unwanted state
+    /// </summary>
+    public static void Warning(params object?[] data)
+    {
+#if UseLogger
+        LogSelf(data, LogLevel.Warning);
+#endif
+    }
+
+    /// <summary>
+    ///     Logs information for players to notify them of an error
+    /// </summary>
+    public static void Error(params object?[] data)
+    {
+#if UseLogger
+        LogSelf(data, LogLevel.Error);
+#endif
+    }
 }

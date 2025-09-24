@@ -2,9 +2,7 @@
 #if UseHarmony
 using HarmonyLib;
 #endif
-#if UseLogger
 using Log = UnityModTemplate.Helpers.Log;
-#endif
 
 namespace UnityModTemplate;
 
@@ -21,11 +19,7 @@ public class Plugin : BaseUnityPlugin
         Patch();
 
 #endif
-#if UseLogger
         Log.Info($"{MyPluginInfo.PLUGIN_GUID} v{MyPluginInfo.PLUGIN_VERSION} has loaded!");
-#else
-        Logger.LogInfo($"{MyPluginInfo.PLUGIN_GUID} v{MyPluginInfo.PLUGIN_VERSION} has loaded!");
-#endif
     }
 
     private void OnDestroy()
@@ -34,11 +28,7 @@ public class Plugin : BaseUnityPlugin
         Unpatch();
 
 #endif
-#if UseLogger
         Log.Info($"{MyPluginInfo.PLUGIN_GUID} v{MyPluginInfo.PLUGIN_VERSION} has unloaded!");
-#else
-        Logger.LogInfo($"{MyPluginInfo.PLUGIN_GUID} v{MyPluginInfo.PLUGIN_VERSION} has unloaded!");
-#endif
     }
 #if UseHarmony
 
@@ -52,9 +42,7 @@ public class Plugin : BaseUnityPlugin
         
         // Harmony.PatchAll(typeof(Patches.Template_Patches));
 
-#if UseLogger
         Log.Debug("Plugin patched!");
-#endif
     }
 
     private void Unpatch()
@@ -62,9 +50,7 @@ public class Plugin : BaseUnityPlugin
         Harmony?.UnpatchSelf();
         Harmony = null;
         
-#if UseLogger
         Log.Debug("Plugin unpatched!");
-#endif
     }
 
     #endregion

@@ -1,24 +1,50 @@
 {
   "$schema": "http://json.schemastore.org/template",
-  "author": "WarperSan",
-  "classifications": [ "Common", "Library" ],
-  "identity": "dev.warpersan.unity-mod-template",
+
   "name": "Unity Mod Template",
   "description": "A project structure for doing Unity mods",
   "shortName": "unity-mod-template",
+
+  "author": "WarperSan",
+  "identity": "dev.warpersan.unity-mod-template",
+
+  "classifications": [ "BepInEx", "BepInEx 5" , "Plugin", "Mod" ],
   "tags": {
     "language": "C#",
     "type": "project"
   },
+
   "sourceName": "UnityModTemplate",
   "preferNameDirectory":true,
+
   "symbols": {
-    "UsePublicizer": {
+    "Author": {
       "type": "parameter",
-      "description": "Defines if the project uses the assembly publicizer.",
-      "datatype": "bool",
-      "defaultValue": false
+      "datatype": "text",
+      "displayName": "Author",
+      "description": "Name of the author of this mod",
+      "isRequired": true,
+      "replaces": "__AUTHOR__"
     },
+    "Description": {
+      "type": "parameter",
+      "datatype": "text",
+      "displayName": "Description",
+      "description": "Description of this mod",
+      "isRequired": false,
+      "defaultValue": "",
+      "replaces": "__DESCRIPTION__"
+    },
+    "Version": {
+      "type": "parameter",
+      "datatype": "text",
+      "displayName": "Version",
+      "description": "Version of this mod",
+      "isRequired": false,
+      "defaultValue": "1.0.0",
+      "replaces": "__VERSION__"
+    },
+    
     "UseLogger": {
       "type": "parameter",
       "description": "Defines if the project includes a default logging implementation.",
@@ -30,20 +56,6 @@
       "description": "Defines if the project includes a default patching implementation using Harmony.",
       "datatype": "bool",
       "defaultValue": true
-    },
-    "Authors": {
-      "type": "parameter",
-      "description": "Defines the authors of this project, adding their name in the credits.",
-      "datatype": "text",
-      "defaultValue": "",
-      "replaces": "{Authors}"
-    },
-    "Description": {
-      "type": "parameter",
-      "description": "Defines the description of this project.",
-      "datatype": "text",
-      "defaultValue": "Mod description",
-      "replaces": "{Description}"
     }
   },
   "sources": [

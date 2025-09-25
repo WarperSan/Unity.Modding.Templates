@@ -11,11 +11,11 @@
 
 namespace $(RootNamespace)
 {
-    public sealed class MyPluginInfo
+    public static class MyPluginInfo
     {
-      public const string PLUGIN_GUID = "$(PluginGUID)"%3B
-      public const string PLUGIN_NAME = "$(PluginName)"%3B
-      public const string PLUGIN_VERSION = "$(PluginVersion)"%3B
+        public const string PLUGIN_GUID = "$(PluginGUID)"%3B
+        public const string PLUGIN_NAME = "$(PluginName)"%3B
+        public const string PLUGIN_VERSION = "$(PluginVersion)"%3B
     }
 }
 ]]></GeneratedText>

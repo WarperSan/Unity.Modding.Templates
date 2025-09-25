@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <PackageId>dev.warpersan.unity-mod-template</PackageId>
+        <PackageVersion>1.0</PackageVersion>
+        <Title>WarperSan's Mod Template</Title>
+        <Authors>WarperSan</Authors>
+        <Description></Description>
+        <PackageTags>dotnet;bepinex;unity;</PackageTags>
+        <PackageProjectUrl>https://github.com/WarperSan/unity-mod-template</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/WarperSan/unity-mod-template</RepositoryUrl>
+        <RepositoryType>Template</RepositoryType>
+        <TargetFramework>netstandard2.1</TargetFramework>
+        <IncludeContentInPack>true</IncludeContentInPack>
+        <IncludeBuildOutput>false</IncludeBuildOutput>
+        <ContentTargetFolders>content</ContentTargetFolders>
+        <NoWarn>$(NoWarn);NU5128</NoWarn>
+        <NoDefaultExcludes>true</NoDefaultExcludes>
+    </PropertyGroup>
+    
+    <ItemGroup>
+        <Compile Include="templates\src\Plugin.cs" />
+        <Content Include="templates\**\*" Exclude="templates\**\bin\**; templates\**\obj\**" />
+        <Compile Remove="**\*" />
+    </ItemGroup>
+    
+    <ItemGroup>
+      <Folder Include="templates\bin\Debug\netstandard2.1\" />
+    </ItemGroup>
+</Project>

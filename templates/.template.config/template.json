@@ -14,7 +14,7 @@
     "type": "project"
   },
 
-  "sourceName": "UnityPluginTemplate",
+  "sourceName": "PluginTemplate",
   "preferNameDirectory":true,
 
   "symbols": {
@@ -45,16 +45,20 @@
       "replaces": "__VERSION__"
     },
     
-    "UseLogger": {
+    "IncludeLogger": {
       "type": "parameter",
-      "description": "Defines if the project includes a default logging implementation.",
       "datatype": "bool",
+      "displayName": "Include Logger",
+      "description": "Includes a default logging implementation using BepInEx's logging.",
+      "isRequired": false,
       "defaultValue": true
     },
-    "UseHarmony": {
+    "IncludeHarmony": {
       "type": "parameter",
-      "description": "Defines if the project includes a default patching implementation using Harmony.",
       "datatype": "bool",
+      "displayName": "Include Harmony",
+      "description": "Includes a default patching implementation using Harmony.",
+      "isRequired": false,
       "defaultValue": true
     }
   },
@@ -62,13 +66,7 @@
     {
       "modifiers": [
         {
-          "exclude": [
-            ".idea/**",
-            ".git/**"
-          ]
-        },
-        {
-          "condition": "(!UseHarmony)",
+          "condition": "(!IncludeHarmony)",
           "exclude": [
             "src/Patches/Example_Patches.cs"
           ]

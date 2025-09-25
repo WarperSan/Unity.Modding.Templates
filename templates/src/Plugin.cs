@@ -1,8 +1,8 @@
 ﻿using BepInEx;
-using Log = UnityModTemplate.Helpers.Log;
-using Patch = UnityModTemplate.Helpers.Patch;
+using Log = PluginTemplate.Helpers.Log;
+using Patch = PluginTemplate.Helpers.Patch;
 
-namespace UnityModTemplate;
+namespace PluginTemplate;
 
 [BepInPlugin(MyPluginInfo.PLUGIN_GUID, MyPluginInfo.PLUGIN_NAME, MyPluginInfo.PLUGIN_VERSION)]
 internal class Plugin : BaseUnityPlugin

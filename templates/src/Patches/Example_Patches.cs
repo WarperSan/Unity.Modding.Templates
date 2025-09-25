@@ -1,6 +1,7 @@
+#if IncludeHarmony
 using HarmonyLib;
 
-namespace UnityModTemplate.Patches;
+namespace PluginTemplate.Patches;
 
 [HarmonyPatch(typeof(string))]
 internal static class Example_Patches
@@ -17,3 +18,4 @@ internal static class Example_Patches
     {
     }
 }
+#endif

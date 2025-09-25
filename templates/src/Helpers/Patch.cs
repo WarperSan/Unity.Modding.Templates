@@ -1,15 +1,15 @@
-#if UseHarmony
+#if IncludeHarmony
 using HarmonyLib;
 #endif
 
-namespace UnityModTemplate.Helpers;
+namespace PluginTemplate.Helpers;
 
 /// <summary>
 ///     Class helping for patching stuff
 /// </summary>
 internal static class Patch
 {
-#if UseHarmony
+#if IncludeHarmony
     private static Harmony? _harmony;
 #endif
 
@@ -18,7 +18,7 @@ internal static class Patch
     /// </summary>
     public static void ApplyAll()
     {
-#if UseHarmony
+#if IncludeHarmony
         if (_harmony != null)
         {
             Log.Debug("Unpatching the existing harmony instance.");
@@ -38,7 +38,7 @@ internal static class Patch
     /// </summary>
     public static void RevertAll()
     {
-#if UseHarmony
+#if IncludeHarmony
         if (_harmony == null)
             return;
         

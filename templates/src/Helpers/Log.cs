@@ -1,16 +1,16 @@
-#if UseLogger
+#if IncludeLogger
 using System.Text;
 using BepInEx.Logging;
 #endif
 
-namespace UnityModTemplate.Helpers;
+namespace PluginTemplate.Helpers;
 
 /// <summary>
 ///     Class helping for logging stuff
 /// </summary>
 internal static class Log
 {
-#if UseLogger
+#if IncludeLogger
     private static readonly ManualLogSource? _logger = Logger.CreateLogSource(MyPluginInfo.PLUGIN_GUID);
     
     private static void LogSelf(object?[] data, LogLevel level)
@@ -39,7 +39,7 @@ internal static class Log
     /// </summary>
     public static void Debug(params object?[] data)
     {
-#if UseLogger
+#if IncludeLogger
         LogSelf(data, LogLevel.Debug);
 #endif
     }
@@ -49,7 +49,7 @@ internal static class Log
     /// </summary>
     public static void Info(params object?[] data)
     {
-#if UseLogger
+#if IncludeLogger
         LogSelf(data, LogLevel.Message);
 #endif
     }
@@ -59,7 +59,7 @@ internal static class Log
     /// </summary>
     public static void Warning(params object?[] data)
     {
-#if UseLogger
+#if IncludeLogger
         LogSelf(data, LogLevel.Warning);
 #endif
     }
@@ -69,7 +69,7 @@ internal static class Log
     /// </summary>
     public static void Error(params object?[] data)
     {
-#if UseLogger
+#if IncludeLogger
         LogSelf(data, LogLevel.Error);
 #endif
     }

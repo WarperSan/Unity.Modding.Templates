@@ -28,25 +28,9 @@ jobs:
         with:
           dotnet-version: ${{ env.DOTNET_VERSION }}
 
-      # Sets up the project
-      - name: Clean Project
-        run: dotnet clean
-
-      - name: Restore Dependencies
-        run: dotnet restore --locked-mode
-
-      - name: Find Target Framework
-        run: echo "DOTNET_FRAMEWORK=$(dotnet msbuild . -getProperty:TargetFramework)" >> $GITHUB_ENV
-
       # Build Project
       - name: Build Project
-        run: dotnet build --no-restore --configuration ${{ env.DOTNET_CONFIGURATION }}
-
-      - name: Clean Output
-        run: |
-          cd "./bin/${{ env.DOTNET_CONFIGURATION }}/${{ env.DOTNET_FRAMEWORK }}"
-          rm -f *.deps.json *.pdb
-          cd -
+        run: dotnet publish --configuration ${{ env.DOTNET_CONFIGURATION }} --output ./publish
 
       - name: Compile Metadata
         run: |
@@ -56,13 +40,14 @@ jobs:
             "version=Version"
             "description=Description"
           )
-          
+
           for property in "${PROPERTIES[@]}" ; do
             OUTPUT_KEY="${property%%=*}"
             INPUT_KEY="${property##*=}"
             OUTPUT_VALUE=$(dotnet msbuild . -getProperty:${INPUT_KEY})
-          
-            echo "${OUTPUT_KEY}=${OUTPUT_VALUE}" >> metadata.env
+
+            echo "${OUTPUT_KEY}='${OUTPUT_VALUE}'" >> metadata.env
+            echo "${OUTPUT_KEY} -> ${OUTPUT_VALUE}"
           done
       
       # Upload Project
@@ -70,7 +55,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: build
-          path: ./bin/${{ env.DOTNET_CONFIGURATION }}/${{ env.DOTNET_FRAMEWORK }}
+          path: ./publish
 
       - name: Upload Metadata
         uses: actions/upload-artifact@v4

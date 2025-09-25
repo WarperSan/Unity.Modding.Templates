@@ -15,15 +15,12 @@
         <ContentTargetFolders>content</ContentTargetFolders>
         <NoWarn>$(NoWarn);NU5128</NoWarn>
         <NoDefaultExcludes>true</NoDefaultExcludes>
+        <PackageLicenseUrl>https://mit-license.org/</PackageLicenseUrl>
     </PropertyGroup>
     
     <ItemGroup>
         <Compile Include="templates\src\Plugin.cs" />
         <Content Include="templates\**\*" Exclude="templates\**\bin\**; templates\**\obj\**" />
         <Compile Remove="**\*" />
-    </ItemGroup>
-    
-    <ItemGroup>
-      <Folder Include="templates\bin\Debug\netstandard2.1\" />
     </ItemGroup>
 </Project>

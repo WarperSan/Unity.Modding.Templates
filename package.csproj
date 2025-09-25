@@ -1,21 +1,28 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <PackageId>dev.warpersan.unity-mod-template</PackageId>
-        <PackageVersion>1.0</PackageVersion>
-        <Title>WarperSan's Mod Template</Title>
+        <GUID>dev.warpersan.unity-plugin-template</GUID>
+        <Version>1.0.0</Version>
+        <Title>WarperSan's Plugin Template</Title>
         <Authors>WarperSan</Authors>
-        <Description></Description>
-        <PackageTags>dotnet;bepinex;unity;</PackageTags>
-        <PackageProjectUrl>https://github.com/WarperSan/unity-mod-template</PackageProjectUrl>
-        <RepositoryUrl>https://github.com/WarperSan/unity-mod-template</RepositoryUrl>
+        <Description>Package offering a BepInEx plugin template</Description>
+        <License>MIT</License>
+        <URL>https://github.com/WarperSan/unity-plugin-template</URL>
+    </PropertyGroup>
+    
+    <PropertyGroup>
+        <PackageId>$(GUID)</PackageId>
+        <PackageVersion>$(Version)</PackageVersion>
+        <PackageType>Template</PackageType>
+        <PackageTags>dotnet;BepInEx;Plugin;Template;unity;</PackageTags>
+        <PackageProjectUrl>$(URL)</PackageProjectUrl>
+        <RepositoryUrl>$(URL)</RepositoryUrl>
         <RepositoryType>Template</RepositoryType>
-        <TargetFramework>netstandard2.1</TargetFramework>
+        <TargetFramework>netstandard2.0</TargetFramework>
         <IncludeContentInPack>true</IncludeContentInPack>
         <IncludeBuildOutput>false</IncludeBuildOutput>
         <ContentTargetFolders>content</ContentTargetFolders>
         <NoWarn>$(NoWarn);NU5128</NoWarn>
         <NoDefaultExcludes>true</NoDefaultExcludes>
-        <PackageLicenseUrl>https://mit-license.org/</PackageLicenseUrl>
     </PropertyGroup>
     
     <ItemGroup>

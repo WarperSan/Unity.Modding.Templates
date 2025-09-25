@@ -50,12 +50,16 @@ jobs:
 
       - name: Compile Metadata
         run: |
+          PRODUCT=$(dotnet msbuild . -getProperty:Product)
           AUTHOR=$(dotnet msbuild . -getProperty:Authors)
           VERSION=$(dotnet msbuild . -getProperty:Version)
+          DESCRIPTION=$(dotnet msbuild . -getProperty:Description)
           
           cat > metadata.env << EOF
+          product=${PRODUCT}
           author=${AUTHOR}
           version=${VERSION}
+          description=${DESCRIPTION}
           EOF
       
       # Upload Project
@@ -70,5 +74,3 @@ jobs:
         with:
           name: metadata
           path: metadata.env
-
-# $(grep -rohPm1 '(?<=^package=).*$' meta/)

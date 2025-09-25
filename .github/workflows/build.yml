@@ -50,17 +50,20 @@ jobs:
 
       - name: Compile Metadata
         run: |
-          PRODUCT=$(dotnet msbuild . -getProperty:Product)
-          AUTHOR=$(dotnet msbuild . -getProperty:Authors)
-          VERSION=$(dotnet msbuild . -getProperty:Version)
-          DESCRIPTION=$(dotnet msbuild . -getProperty:Description)
+          PROPERTIES=(
+            "product=Product"
+            "author=Authors"
+            "version=Version"
+            "description=Description"
+          )
           
-          cat > metadata.env << EOF
-          product=${PRODUCT}
-          author=${AUTHOR}
-          version=${VERSION}
-          description=${DESCRIPTION}
-          EOF
+          for property in "${PROPERTIES[@]}" ; do
+            OUTPUT_KEY="${property%%=*}"
+            INPUT_KEY="${property##*=}"
+            OUTPUT_VALUE=$(dotnet msbuild . -getProperty:${INPUT_KEY})
+          
+            echo "${OUTPUT_KEY}=${OUTPUT_VALUE}" >> metadata.env
+          done
       
       # Upload Project
       - name: Upload Build

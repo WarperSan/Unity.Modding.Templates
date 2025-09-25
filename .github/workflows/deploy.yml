@@ -1,0 +1,48 @@
+name: Deploy to Platforms
+
+on:
+  workflow_run:
+    workflows: [Build]
+    types:
+      - completed
+
+env:
+  BUILD_FILE: build
+  METADATA_FILE: metadata
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  set-variables:
+    runs-on: ubuntu-latest
+    outputs:
+      product: ${{ steps.from_metadata.outputs.PRODUCT }}
+      version: ${{ steps.from_metadata.outputs.VERSION }}
+      output: ${{ env.BUILD_FILE }}
+    steps:
+      - name: Download Metadata
+        uses: actions/download-artifact@v5
+        with:
+          name: ${{ env.METADATA_FILE }}
+          path: meta/
+          run-id: ${{ github.event.workflow_run.id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Assign variables
+        id: from_metadata
+        run: |
+          source meta/*
+          
+          echo "PRODUCT=$product" >> $GITHUB_OUTPUT
+          echo "VERSION=$version" >> $GITHUB_OUTPUT
+  github:
+    needs: set-variables
+    uses: ./.github/workflows/deploy-github.yml
+    with:
+      name: test
+      version: ${{ needs.set-variables.outputs.version }}
+      artifact: ${{ needs.set-variables.outputs.output }}
+      run_id: ${{ github.event.workflow_run.id }}
+    secrets:
+      personal_access_token: ${{ secrets.GITHUB_TOKEN }}

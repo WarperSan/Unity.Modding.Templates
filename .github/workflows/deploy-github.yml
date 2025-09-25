@@ -15,6 +15,10 @@ on:
         description: Name of the artifact to upload
         required: true
         type: string
+      run_id:
+        description: Id of the workflow where the artifact has been uploaded 
+        required: true
+        type: string
     secrets:
       personal_access_token:
         required: true
@@ -30,12 +34,10 @@ jobs:
         with:
           name: ${{ inputs.artifact }}
           path: release-files/
-
+          run-id: ${{ inputs.run_id }}
+          github-token: ${{ secrets.personal_access_token }}
       - name: Zip Build
         run: |
-          apt update
-          apt install zip
-
           cd release-files
           zip -r "../${{ env.RELEASE_NAME }}.zip" .
           cd -

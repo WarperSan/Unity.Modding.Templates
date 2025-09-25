@@ -1,5 +1,5 @@
 <Project>
-    <Target Name="AddGeneratedFile" BeforeTargets="BeforeCompile;CoreCompile" Inputs="$(MSBuildAllProjects)" Outputs="$(IntermediateOutputPath)PluginInfo.cs">
+    <Target Name="CompilePluginInfo" BeforeTargets="BeforeCompile;CoreCompile" Inputs="$(MSBuildAllProjects)" Outputs="$(IntermediateOutputPath)MyPluginInfo.cs">
 
         <PropertyGroup>
             <PluginGUID Condition="'$(PluginGUID)' == ''">dev.$([System.String]::Copy('$(Authors)').ToLower()).$([System.String]::Copy('$(AssemblyName)').ToLower())</PluginGUID>
@@ -11,7 +11,7 @@
 
 namespace $(RootNamespace)
 {
-    public class MyPluginInfo
+    public sealed class MyPluginInfo
     {
       public const string PLUGIN_GUID = "$(PluginGUID)"%3B
       public const string PLUGIN_NAME = "$(PluginName)"%3B
@@ -19,7 +19,7 @@ namespace $(RootNamespace)
     }
 }
 ]]></GeneratedText>
-            <GeneratedFilePath>$(IntermediateOutputPath)PluginInfo.cs</GeneratedFilePath>
+            <GeneratedFilePath>$(IntermediateOutputPath)MyPluginInfo.cs</GeneratedFilePath>
         </PropertyGroup>
 
         <ItemGroup>

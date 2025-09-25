@@ -1,20 +1,20 @@
 {
   "$schema": "http://json.schemastore.org/template",
 
-  "name": "Unity Mod Template",
+  "name": "Unity Plugin Template",
   "description": "A project structure for doing Unity mods",
-  "shortName": "unity-mod-template",
+  "shortName": "unity-plugin-template",
 
   "author": "WarperSan",
-  "identity": "dev.warpersan.unity-mod-template",
+  "identity": "dev.warpersan.unity-plugin-template",
 
-  "classifications": [ "BepInEx", "BepInEx 5" , "Plugin", "Mod" ],
+  "classifications": [ "BepInEx", "BepInEx 5" , "Plugin", "Unity" ],
   "tags": {
     "language": "C#",
     "type": "project"
   },
 
-  "sourceName": "UnityModTemplate",
+  "sourceName": "UnityPluginTemplate",
   "preferNameDirectory":true,
 
   "symbols": {
@@ -22,7 +22,7 @@
       "type": "parameter",
       "datatype": "text",
       "displayName": "Author",
-      "description": "Name of the author of this mod",
+      "description": "Name of the author of this plugin",
       "isRequired": true,
       "replaces": "__AUTHOR__"
     },
@@ -30,7 +30,7 @@
       "type": "parameter",
       "datatype": "text",
       "displayName": "Description",
-      "description": "Description of this mod",
+      "description": "Description of this plugin",
       "isRequired": false,
       "defaultValue": "",
       "replaces": "__DESCRIPTION__"
@@ -39,7 +39,7 @@
       "type": "parameter",
       "datatype": "text",
       "displayName": "Version",
-      "description": "Version of this mod",
+      "description": "Version of this plugin",
       "isRequired": false,
       "defaultValue": "1.0.0",
       "replaces": "__VERSION__"

@@ -24,7 +24,7 @@ internal static class Patch
             Log.Debug("Unpatching the existing harmony instance.");
             RevertAll();
         }
-        
+
         _harmony = new Harmony(MyPluginInfo.PLUGIN_GUID);
 
         _harmony.PatchAll(typeof(Patches.Example_Patches));
@@ -41,7 +41,7 @@ internal static class Patch
 #if IncludeHarmony
         if (_harmony == null)
             return;
-        
+
         _harmony.UnpatchSelf();
 
         _harmony = null;

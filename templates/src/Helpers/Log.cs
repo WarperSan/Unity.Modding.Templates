@@ -12,7 +12,7 @@ internal static class Log
 {
 #if IncludeLogger
     private static readonly ManualLogSource? _logger = Logger.CreateLogSource(MyPluginInfo.PLUGIN_GUID);
-    
+
     private static void LogSelf(object?[] data, LogLevel level)
     {
         if (_logger == null)

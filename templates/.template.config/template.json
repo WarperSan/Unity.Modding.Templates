@@ -60,6 +60,14 @@
       "description": "Includes a default patching implementation using Harmony.",
       "isRequired": false,
       "defaultValue": true
+    },
+    "IncludeMinVer": {
+      "type": "parameter",
+      "datatype": "bool",
+      "displayName": "Include Automatic Versioning",
+      "description": "Includes the automatic versioning of the project based of the Git tags.",
+      "isRequired": false,
+      "defaultValue": true
     }
   },
   "sources": [

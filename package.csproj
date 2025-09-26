@@ -1,7 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <GUID>dev.warpersan.unity-plugin-template</GUID>
-        <Version>1.0.0</Version>
         <Title>WarperSan's Plugin Template</Title>
         <Authors>WarperSan</Authors>
         <Description>Package offering a BepInEx plugin template</Description>
@@ -35,5 +34,10 @@
 
         <None Include="LICENSE" Pack="true" PackagePath=""/>
         <None Include="README.md" Pack="true" PackagePath="\"/>
+    </ItemGroup>
+
+    <!-- PACKAGES -->
+    <ItemGroup>
+        <PackageReference Include="MinVer" Version="6.*" PrivateAssets="all" />
     </ItemGroup>
 </Project>

@@ -5,7 +5,9 @@
         <Product>PluginTemplate</Product>
         <Authors>__AUTHOR__</Authors>
         <Description>__DESCRIPTION__</Description>
+        <!--#if (!UseMinVer) -->
         <Version>__VERSION__</Version>
+        <!--#endif -->
     </PropertyGroup>
 
     <!-- Project Properties -->
@@ -18,5 +20,8 @@
     <ItemGroup>
         <PackageReference Include="BepInEx.Core" Version="5.*" PrivateAssets="all"/>
         <PackageReference Include="UnityEngine.Modules" Version="2022.3.9" IncludeAssets="compile" PrivateAssets="all"/>
+        <!--#if (UseMinVer) -->
+        <PackageReference Include="MinVer" Version="6.*" PrivateAssets="all" />
+        <!--#endif -->
     </ItemGroup>
 </Project>

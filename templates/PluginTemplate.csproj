@@ -16,7 +16,7 @@
         <RootNamespace>PluginTemplate</RootNamespace>
     </PropertyGroup>
 
-    <!-- Package References -->
+    <!-- Packages -->
     <ItemGroup>
         <PackageReference Include="BepInEx.Core" Version="5.*" PrivateAssets="all"/>
         <PackageReference Include="UnityEngine.Modules" Version="2022.3.9" IncludeAssets="compile" PrivateAssets="all"/>

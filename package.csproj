@@ -36,8 +36,13 @@
         <None Include="README.md" Pack="true" PackagePath="\"/>
     </ItemGroup>
 
-    <!-- PACKAGES -->
+    <!-- Packages -->
     <ItemGroup>
         <PackageReference Include="MinVer" Version="6.*" PrivateAssets="all" />
     </ItemGroup>
+    
+    <!-- MinVer's Properties -->
+    <PropertyGroup>
+        <MinVerDefaultPreReleaseIdentifiers>dev</MinVerDefaultPreReleaseIdentifiers>
+    </PropertyGroup>
 </Project>

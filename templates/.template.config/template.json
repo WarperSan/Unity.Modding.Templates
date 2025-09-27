@@ -51,7 +51,7 @@
       "displayName": "Include Logger",
       "description": "Includes a default logging implementation using BepInEx's logging.",
       "isRequired": false,
-      "defaultValue": true
+      "defaultValue": "true"
     },
     "IncludeHarmony": {
       "type": "parameter",
@@ -59,7 +59,7 @@
       "displayName": "Include Harmony",
       "description": "Includes a default patching implementation using Harmony.",
       "isRequired": false,
-      "defaultValue": true
+      "defaultValue": "true"
     },
     "IncludeMinVer": {
       "type": "parameter",
@@ -67,7 +67,7 @@
       "displayName": "Include Automatic Versioning",
       "description": "Includes the automatic versioning of the project based of the Git tags.",
       "isRequired": false,
-      "defaultValue": true
+      "defaultValue": "true"
     }
   },
   "sources": [

@@ -8,6 +8,9 @@ on:
 env:
   DOTNET_CONFIGURATION: 'Release'
 
+permissions:
+  contents: write
+
 jobs:
   create:
     runs-on: ubuntu-latest

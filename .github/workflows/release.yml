@@ -1,0 +1,65 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - "[0-9]+.[0-9]+.[0-9]+"
+
+env:
+  DOTNET_CONFIGURATION: 'Release'
+
+jobs:
+  create:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Pull Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+
+      - name: Pack
+        run: dotnet pack --configuration ${{ env.DOTNET_CONFIGURATION }}
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: 'package'
+          path: ./${{ env.DOTNET_CONFIGURATION }}/*.nupkg
+          if-no-files-found: 'error'
+  
+  deploy-to-nuget:
+    needs: create
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/download-artifact@v5
+        with:
+          name: 'package'
+          path: ./nuget
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        
+      - name: Deploy to NuGet
+        run: dotnet nuget push ./nuget/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
+        
+  deploy-to-github:
+    needs: create
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v5
+
+      - uses: actions/download-artifact@v5
+        with:
+          name: 'package'
+          path: ./nuget
+
+      - name: Release
+        uses: softprops/action-gh-release@v2
+        with:
+          name: v${{ github.ref_name }}
+          files: |
+            ./nuget/*.nupkg

@@ -1,6 +1,6 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
-        <GUID>dev.warpersan.unity-plugin-template</GUID>
+        <GUID>WarperSan.BepInEx.Template</GUID>
         <Title>WarperSan's Plugin Template</Title>
         <Authors>WarperSan</Authors>
         <Description>Package offering a BepInEx plugin template</Description>

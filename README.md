@@ -12,7 +12,7 @@ Unity Plugin Template is a NuGet package for creating new BepInEx plugins from s
 
 Install the template directly from NuGet by running:
 ```
-dotnet new install dev.warpersan.unity-plugin-template
+dotnet new install WarperSan.BepInEx.Template
 ```
 
 This command installs the latest version of the template published on NuGet.
@@ -20,6 +20,6 @@ This command installs the latest version of the template published on NuGet.
 ### Manual Installation
 
 Alternatively, you can download and install the latest release manually from:
-- [NuGet](https://www.nuget.org/packages/dev.warpersan.unity-plugin-template)
+- [NuGet](https://www.nuget.org/packages/WarperSan.BepInEx.Template)
 - [GitHub Releases](https://github.com/WarperSan/unity-plugin-template/releases/latest)
 

@@ -6,25 +6,31 @@
         <Description>Package offering a BepInEx plugin template</Description>
         <License>MIT</License>
         <URL>https://github.com/WarperSan/unity-plugin-template</URL>
+        <TargetFramework>netstandard2.0</TargetFramework>
+        <Tags>dotnet;BepInEx;Plugin;Template;unity;</Tags>
     </PropertyGroup>
     
+    <!-- Nuget Properties -->
     <PropertyGroup>
         <PackageId>$(GUID)</PackageId>
-        <PackageVersion>$(Version)</PackageVersion>
         <PackageType>Template</PackageType>
-        <PackageTags>dotnet;BepInEx;Plugin;Template;unity;</PackageTags>
+        <PackageVersion>$(Version)</PackageVersion>
+        <PackageTags>$(Tags)</PackageTags>
         <PackageProjectUrl>$(URL)</PackageProjectUrl>
-        <RepositoryUrl>$(URL)</RepositoryUrl>
-        <RepositoryType>Template</RepositoryType>
-        <TargetFramework>netstandard2.0</TargetFramework>
-        <IncludeContentInPack>true</IncludeContentInPack>
-        <IncludeBuildOutput>false</IncludeBuildOutput>
-        <ContentTargetFolders>content</ContentTargetFolders>
-        <NoWarn>$(NoWarn);NU5128</NoWarn>
-        <NoDefaultExcludes>true</NoDefaultExcludes>
-
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
         <PackageReadmeFile>README.md</PackageReadmeFile>
+
+        <RepositoryUrl>$(URL)</RepositoryUrl>
+        <RepositoryType>Template</RepositoryType>
+
+        <IncludeContentInPack>true</IncludeContentInPack>
+        <IncludeBuildOutput>false</IncludeBuildOutput>
+
+        <ContentTargetFolders>content</ContentTargetFolders>
+
+        <NoWarn>$(NoWarn);NU5128</NoWarn>
+
+        <NoDefaultExcludes>true</NoDefaultExcludes>
     </PropertyGroup>
     
     <!-- Files -->

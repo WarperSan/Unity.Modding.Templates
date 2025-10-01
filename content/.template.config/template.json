@@ -22,7 +22,7 @@
       "type": "parameter",
       "datatype": "text",
       "displayName": "Author",
-      "description": "Name of the author of this plugin",
+      "description": "Defines the name of the author of this plugin",
       "isRequired": true,
       "replaces": "__AUTHOR__"
     },
@@ -30,7 +30,7 @@
       "type": "parameter",
       "datatype": "text",
       "displayName": "Description",
-      "description": "Description of this plugin",
+      "description": "Defines the description to use for this plugin",
       "isRequired": false,
       "defaultValue": "",
       "replaces": "__DESCRIPTION__"
@@ -39,7 +39,7 @@
       "type": "parameter",
       "datatype": "text",
       "displayName": "Version",
-      "description": "Version of this plugin",
+      "description": "Defines the version to start from for this plugin",
       "isRequired": false,
       "defaultValue": "1.0.0",
       "replaces": "__VERSION__"

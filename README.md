@@ -12,7 +12,7 @@ Template to create your own mods from scratch. It provides an easy .NET template
 
 Install the template directly from NuGet by running:
 ```shell
-  dotnet new install WarperSan.BepInEx.Template
+dotnet new install WarperSan.BepInEx.Template
 ```
 
 This command installs the latest version of the template published on NuGet.
@@ -28,12 +28,12 @@ Alternatively, you can download and install the latest release manually from:
 
 Once the template is installed, you can run the following command to create a new project. You can replace `MyFirstMod` with your mod's name:
 ```shell
-    dotnet new WarperSan.BepInEx.Template -n MyFirstMod
+dotnet new WarperSan.BepInEx.Template -n MyFirstMod
 ```
 
 To see the other options provided in the template, you can use the following command:
 ```shell
-    dotnet new WarperSan.BepInEx.Template --help
+dotnet new WarperSan.BepInEx.Template --help
 ```
 
 ### Using an IDE

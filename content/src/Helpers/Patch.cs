@@ -1,7 +1,3 @@
-#if Patcher_Harmony
-using HarmonyLib;
-#endif
-
 namespace PluginTemplate.Helpers;
 
 /// <summary>
@@ -10,7 +6,7 @@ namespace PluginTemplate.Helpers;
 internal static class Patch
 {
 #if Patcher_Harmony
-    private static Harmony? _harmony;
+    private static HarmonyLib.Harmony? _harmony;
 #endif
 
     /// <summary>
@@ -25,7 +21,7 @@ internal static class Patch
             RevertAll();
         }
 
-        _harmony = new Harmony(MyPluginInfo.PLUGIN_GUID);
+        _harmony = new HarmonyLib.Harmony(MyPluginInfo.PLUGIN_GUID);
 
         _harmony.PatchAll(typeof(Patches.Example_Patches));
 

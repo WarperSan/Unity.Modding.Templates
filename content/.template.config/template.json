@@ -111,10 +111,15 @@
           "choice": "Harmony",
           "displayName": "Harmony",
           "description": "Uses the patching system from HarmonyLib"
+        },
+        {
+          "choice": "none",
+          "displayName": "None",
+          "description": "Uses no patching system"
         }
       ],
       "allowMultipleValues": false,
-      "defaultValue": ""
+      "defaultValue": "none"
     },
 
     "IncludeMinVer": {
@@ -147,7 +152,7 @@
     {
       "modifiers": [
         {
-          "condition": "(ProjectPatcher == \"\")",
+          "condition": "ProjectPatcher == \"none\"",
           "exclude": [
             "src/Patches/Example_Patches.cs"
           ]

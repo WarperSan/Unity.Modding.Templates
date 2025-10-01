@@ -13,6 +13,7 @@
     <!-- Nuget Properties -->
     <PropertyGroup>
         <PackageId>$(GUID)</PackageId>
+        <PackageIcon>icon.png</PackageIcon>
         <PackageType>Template</PackageType>
         <PackageVersion>$(Version)</PackageVersion>
         <PackageTags>$(Tags)</PackageTags>
@@ -41,6 +42,7 @@
 
         <None Include="LICENSE" Pack="true" PackagePath=""/>
         <None Include="README.md" Pack="true" PackagePath="README.md"/>
+        <None Include="icon.png" Pack="true" PackagePath="" />
     </ItemGroup>
 
     <!-- Packages -->

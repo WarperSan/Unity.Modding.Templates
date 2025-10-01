@@ -1,5 +1,5 @@
-#if IncludeLogger
 using System.Text;
+#if Logger_BepInEx
 using BepInEx.Logging;
 #endif
 
@@ -10,14 +10,8 @@ namespace PluginTemplate.Helpers;
 /// </summary>
 internal static class Log
 {
-#if IncludeLogger
-    private static readonly ManualLogSource? _logger = Logger.CreateLogSource(MyPluginInfo.PLUGIN_GUID);
-
-    private static void LogSelf(object?[] data, LogLevel level)
+    private static string GenerateMessage(object?[] data)
     {
-        if (_logger == null)
-            return;
-
         var message = new StringBuilder();
 
         for (var i = 0; i < data.Length; i++)
@@ -30,7 +24,16 @@ internal static class Log
                 message.Append(' ');
         }
 
-        _logger.Log(level, message.ToString());
+        return message.ToString();
+    }
+    
+#if Logger_BepInEx
+    private static ManualLogSource? _logger;
+
+    private static void LogSelf(string message, LogLevel level)
+    {
+        _logger ??= Logger.CreateLogSource(MyPluginInfo.PLUGIN_GUID);
+        _logger?.Log(level, message);
     }
 #endif
 
@@ -39,8 +42,16 @@ internal static class Log
     /// </summary>
     public static void Debug(params object?[] data)
     {
-#if IncludeLogger
-        LogSelf(data, LogLevel.Debug);
+        var message = GenerateMessage(data);
+
+#if Logger_System
+        Console.WriteLine($"[DEBUG] {message}");
+#endif
+#if Logger_Unity
+        UnityEngine.Debug.Log(message);
+#endif
+#if Logger_BepInEx
+        LogSelf(message, LogLevel.Debug);
 #endif
     }
 
@@ -49,8 +60,16 @@ internal static class Log
     /// </summary>
     public static void Info(params object?[] data)
     {
-#if IncludeLogger
-        LogSelf(data, LogLevel.Message);
+        var message = GenerateMessage(data);
+
+#if Logger_System
+        Console.WriteLine($"[INFO] {message}");
+#endif
+#if Logger_Unity
+        UnityEngine.Debug.Log(message);
+#endif
+#if Logger_BepInEx
+        LogSelf(message, LogLevel.Message);
 #endif
     }
 
@@ -59,8 +78,16 @@ internal static class Log
     /// </summary>
     public static void Warning(params object?[] data)
     {
-#if IncludeLogger
-        LogSelf(data, LogLevel.Warning);
+        var message = GenerateMessage(data);
+
+#if Logger_System
+        Console.WriteLine($"[WARNING] {message}");
+#endif
+#if Logger_Unity
+        UnityEngine.Debug.LogWarning(message);
+#endif
+#if Logger_BepInEx
+        LogSelf(message, LogLevel.Warning);
 #endif
     }
 
@@ -69,8 +96,16 @@ internal static class Log
     /// </summary>
     public static void Error(params object?[] data)
     {
-#if IncludeLogger
-        LogSelf(data, LogLevel.Error);
+        var message = GenerateMessage(data);
+
+#if Logger_System
+        Console.WriteLine($"[ERROR] {message}");
+#endif
+#if Logger_Unity
+        UnityEngine.Debug.LogError(message);
+#endif
+#if Logger_BepInEx
+        LogSelf(message, LogLevel.Error);
 #endif
     }
 }

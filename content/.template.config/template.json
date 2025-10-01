@@ -74,14 +74,31 @@
       "defaultValue": "netstandard2.1",
       "replaces": "__TARGET_FRAMEWORK__"
     },
-    
-    "IncludeLogger": {
+    "ProjectLogger": {
       "type": "parameter",
-      "datatype": "bool",
-      "displayName": "Include Logger",
-      "description": "Includes a default logging implementation using BepInEx's logging.",
+      "datatype": "choice",
+      "displayName": "Included Logger",
+      "description": "Defines the logger implementation to include",
       "isRequired": false,
-      "defaultValue": "true"
+      "choices": [
+        {
+          "choice": "BepInEx",
+          "displayName": "BepInEx",
+          "description": "Uses the logging system from BepInEx.Logging"
+        },
+        {
+          "choice": "System",
+          "displayName": "System",
+          "description": "Uses the logging system from System.Console"
+        },
+        {
+          "choice": "Unity",
+          "displayName": "Unity",
+          "description": "Uses the logging system from UnityEngine.Debug"
+        }
+      ],
+      "allowMultipleValues": true,
+      "defaultValue": ""
     },
     "IncludeHarmony": {
       "type": "parameter",
@@ -98,6 +115,20 @@
       "description": "Includes the automatic versioning of the project based of the Git tags.",
       "isRequired": false,
       "defaultValue": "true"
+    },
+    
+    "Logger_BepInEx": {
+      "type": "computed",
+      "value": "ProjectLogger == \"BepInEx\""
+    },
+    "Logger_System": {
+      "type": "computed",
+      "value": "ProjectLogger == \"System\""
+    },
+    "Logger_Unity": {
+      "type": "computed",
+      "value": "ProjectLogger == \"Unity\""
+    },
     }
   },
   "sources": [

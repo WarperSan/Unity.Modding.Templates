@@ -45,6 +45,36 @@
       "replaces": "__VERSION__"
     },
     
+    "ProjectFramework": {
+      "type": "parameter",
+      "datatype": "choice",
+      "displayName": "Framework",
+      "description": "Defines the framework to use for this plugin",
+      "isRequired": false,
+      "choices": [
+        {
+          "choice": "netstandard2.1",
+          "displayName": ".NET Standard 2.1"
+        },
+        {
+          "choice": "netstandard2.0",
+          "displayName": ".NET Standard 2.0"
+        },
+        {
+          "choice": "net46",
+          "displayName": ".NET Framework 4.6"
+        },
+        {
+          "choice": "net35",
+          "displayName": ".NET Framework 3.5"
+        }
+      ],
+      "allowMultipleValues": false,
+      "enableQuotelessLiterals": true,
+      "defaultValue": "netstandard2.1",
+      "replaces": "__TARGET_FRAMEWORK__"
+    },
+    
     "IncludeLogger": {
       "type": "parameter",
       "datatype": "bool",

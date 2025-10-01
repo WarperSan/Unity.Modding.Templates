@@ -7,7 +7,7 @@
         <License>MIT</License>
         <URL>https://github.com/WarperSan/unity-plugin-template</URL>
         <TargetFramework>netstandard2.0</TargetFramework>
-        <Tags>dotnet;BepInEx;Plugin;Template;unity;</Tags>
+        <Tags>BepInEx;Modding</Tags>
     </PropertyGroup>
     
     <!-- Nuget Properties -->

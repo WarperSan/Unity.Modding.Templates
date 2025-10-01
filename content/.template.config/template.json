@@ -8,7 +8,7 @@
   "author": "WarperSan",
   "identity": "dev.warpersan.unity-plugin-template",
 
-  "classifications": [ "BepInEx", "BepInEx 5" , "Plugin", "Unity" ],
+  "classifications": [ "Mod", "Plugin", "BepInEx" ],
   "tags": {
     "language": "C#",
     "type": "project"

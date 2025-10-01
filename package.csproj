@@ -23,14 +23,14 @@
         <RepositoryUrl>$(URL)</RepositoryUrl>
         <RepositoryType>Template</RepositoryType>
 
-        <IncludeContentInPack>true</IncludeContentInPack>
-        <IncludeBuildOutput>false</IncludeBuildOutput>
-
         <ContentTargetFolders>content</ContentTargetFolders>
 
         <NoWarn>$(NoWarn);NU5128</NoWarn>
 
+        <LocalizeTemplates>false</LocalizeTemplates>
         <NoDefaultExcludes>true</NoDefaultExcludes>
+        <IncludeContentInPack>true</IncludeContentInPack>
+        <IncludeBuildOutput>false</IncludeBuildOutput>
     </PropertyGroup>
     
     <!-- Files -->

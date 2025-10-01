@@ -1,4 +1,4 @@
-#if IncludeHarmony
+#if Patcher_Harmony
 using HarmonyLib;
 
 namespace PluginTemplate.Patches;

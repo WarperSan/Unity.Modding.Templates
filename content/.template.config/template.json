@@ -100,14 +100,23 @@
       "allowMultipleValues": true,
       "defaultValue": ""
     },
-    "IncludeHarmony": {
+    "ProjectPatcher": {
       "type": "parameter",
-      "datatype": "bool",
-      "displayName": "Include Harmony",
-      "description": "Includes a default patching implementation using Harmony.",
+      "datatype": "choice",
+      "displayName": "Included Patcher",
+      "description": "Defines the patcher implementation to include",
       "isRequired": false,
-      "defaultValue": "true"
+      "choices": [
+        {
+          "choice": "Harmony",
+          "displayName": "Harmony",
+          "description": "Uses the patching system from HarmonyLib"
+        }
+      ],
+      "allowMultipleValues": false,
+      "defaultValue": ""
     },
+
     "IncludeMinVer": {
       "type": "parameter",
       "datatype": "bool",
@@ -129,13 +138,16 @@
       "type": "computed",
       "value": "ProjectLogger == \"Unity\""
     },
+    "Patcher_Harmony": {
+      "type": "computed",
+      "valueSource": "ProjectPatcher == \"Harmony\""
     }
   },
   "sources": [
     {
       "modifiers": [
         {
-          "condition": "(!IncludeHarmony)",
+          "condition": "(ProjectPatcher == \"\")",
           "exclude": [
             "src/Patches/Example_Patches.cs"
           ]

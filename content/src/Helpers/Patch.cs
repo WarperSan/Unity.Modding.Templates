@@ -1,4 +1,4 @@
-#if IncludeHarmony
+#if Patcher_Harmony
 using HarmonyLib;
 #endif
 
@@ -9,7 +9,7 @@ namespace PluginTemplate.Helpers;
 /// </summary>
 internal static class Patch
 {
-#if IncludeHarmony
+#if Patcher_Harmony
     private static Harmony? _harmony;
 #endif
 
@@ -18,7 +18,7 @@ internal static class Patch
     /// </summary>
     public static void ApplyAll()
     {
-#if IncludeHarmony
+#if Patcher_Harmony
         if (_harmony != null)
         {
             Log.Debug("Unpatching the existing harmony instance.");
@@ -38,7 +38,7 @@ internal static class Patch
     /// </summary>
     public static void RevertAll()
     {
-#if IncludeHarmony
+#if Patcher_Harmony
         if (_harmony == null)
             return;
 

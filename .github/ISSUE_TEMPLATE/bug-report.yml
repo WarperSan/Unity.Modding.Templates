@@ -1,0 +1,41 @@
+name: Bug Report
+description: Report a bug with this project
+title: ""
+labels: ["bug"]
+body:
+  - type: textarea
+    id: issue-description
+    attributes:
+      label: Describe the bug
+      placeholder: Describe the bug in as much detail as you can.
+    validations:
+      required: true
+  - type: textarea
+    id: steps-description
+    attributes:
+      label: Steps to Reproduce
+      placeholder: |
+        Steps to reproduce the behavior:
+        1. Go to '...'
+        2. Click on '....'
+        3. See error
+    validations:
+      required: true
+  - type: textarea
+    id: expected-description
+    attributes:
+      label: Expected Behavior (Optional)
+      placeholder: Describe how the project should work.
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional context (optional)
+      placeholder: Put as much context (links, images) to help us quickly start working on your bug.
+  - type: dropdown
+    id: project-type
+    attributes:
+      label: Project(s) Targeted
+      multiple: true
+      options:
+        - Package
+        - .NET Template

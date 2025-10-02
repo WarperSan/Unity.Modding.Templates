@@ -1,6 +1,6 @@
 name: Feature Request
 description: Suggest an idea for this project
-title: "[FEATURE] "
+title: ""
 labels: ["enhancement"]
 body:
   - type: textarea
@@ -19,7 +19,7 @@ body:
     id: additional-context
     attributes:
       label: Additional context (optional)
-      placeholder: Put as much resources (links, images) to help us quickly start working on your feature.
+      placeholder: Put as much context (links, images) to help us quickly start working on your feature.
   - type: dropdown
     id: project-type
     attributes:

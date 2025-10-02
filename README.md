@@ -1,42 +1,64 @@
-# Unity.Modding.Templates
-
-[![NuGet](https://img.shields.io/nuget/v/WarperSan.BepInEx.Template.svg)](https://www.nuget.org/packages/WarperSan.BepInEx.Template)
-[![NuGet Badge](https://img.shields.io/nuget/dt/WarperSan.BepInEx.Template)](https://www.nuget.org/packages/WarperSan.BepInEx.Template)
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://raw.githubusercontent.com/WarperSan/Unity.Modding.Templates/master/LICENSE)
+<br>
+<div style="text-align: center">
+    <img alt="Logo" src="https://raw.githubusercontent.com/WarperSan/Unity.Modding.Templates/master/icon.png" height="128"/>
+    <h1>Unity.Modding.Templates</h1>
+    <div style="display: flex; gap: 1rem; justify-content: center;">
+        <a href="https://www.nuget.org/packages/WarperSan.BepInEx.Template"><img alt="NuGet Badge" src="https://img.shields.io/nuget/v/WarperSan.BepInEx.Template.svg"></a>
+        <a href="https://www.nuget.org/packages/WarperSan.BepInEx.Template"><img alt="NuGet Version" src="https://img.shields.io/nuget/dt/WarperSan.BepInEx.Template.svg"></a>
+        <a href="https://raw.githubusercontent.com/WarperSan/Unity.Modding.Templates/master/LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-purple.svg"></a>
+    </div>
+</div>
 
 ## Overview
-Template to create your own mods from scratch. It provides an easy .NET template that includes useful features, crucial for any project.
+
+Unity.Modding.Templates is a collection of .NET templates that speeds up the creation of Unity mods.
 
 ## Installation
 ### Using the .NET CLI
 
-Install the template directly from NuGet by running:
-```shell
+You can install the templates directly from NuGet by running the following command:
+```bash
 dotnet new install WarperSan.BepInEx.Template
 ```
 
-This command installs the latest version of the template published on NuGet.
-
 ### Manual Installation
 
-Alternatively, you can download and install the latest release manually from:
+Alternatively, you can manually download the latest release of this project from:
 - [NuGet](https://www.nuget.org/packages/WarperSan.BepInEx.Template)
 - [GitHub Releases](https://github.com/WarperSan/Unity.Modding.Templates/releases/latest)
 
-## Usage
-### Using the .NET CLI
-
-Once the template is installed, you can run the following command to create a new project. You can replace `MyFirstMod` with your mod's name:
-```shell
-dotnet new WarperSan.BepInEx.Template -n MyFirstMod
+You will then be able to install the templates by running this command in the directory containing the downloaded package:
+```bash
+dotnet new install ./WarperSan.BepInEx.Template.*.nupkg
 ```
 
-To see the other options provided in the template, you can use the following command:
+## Usage
+### Using an IDE
+
+In your IDE (Visual Studio, Rider, or VS Code), create a new solution and select `Unity Plugin Template`.
+
+From there, adjust the options to fit your project's needs.
+
+### Using the .NET CLI
+
+Once the template is installed, you can create a new project with:
+```bash
+dotnet new WarperSan.BepInEx.Template -n MyMod
+```
+
+Replace `MyMod`with whatever you'd like to name your project.
+
+To see all available options and parameters, run:
 ```shell
 dotnet new WarperSan.BepInEx.Template --help
 ```
 
-### Using an IDE
+## Contributing
 
-Depending on your IDE, this process will be slightly different. You will want to create a new solution, select `Unity Plugin Template`. You can then adjust the options for your needs.
+Contributions, issues, and feedback are welcome!
 
+If your community has its own tweaks, feel free to [fork this template](https://github.com/WarperSan/Unity.Modding.Templates/fork) and adapt it to your needs.
+
+## License
+
+This project is licensed under the [MIT License](https://raw.githubusercontent.com/WarperSan/Unity.Modding.Templates/master/LICENSE)

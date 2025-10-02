@@ -1,8 +1,8 @@
 <br>
-<div style="text-align: center">
+<div align="center">
     <img alt="Logo" src="https://raw.githubusercontent.com/WarperSan/Unity.Modding.Templates/master/icon.png" height="128"/>
     <h1>Unity.Modding.Templates</h1>
-    <div style="display: flex; gap: 1rem; justify-content: center;">
+    <div>
         <a href="https://www.nuget.org/packages/WarperSan.BepInEx.Template"><img alt="NuGet Badge" src="https://img.shields.io/nuget/v/WarperSan.BepInEx.Template.svg"></a>
         <a href="https://www.nuget.org/packages/WarperSan.BepInEx.Template"><img alt="NuGet Version" src="https://img.shields.io/nuget/dt/WarperSan.BepInEx.Template.svg"></a>
         <a href="https://raw.githubusercontent.com/WarperSan/Unity.Modding.Templates/master/LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-purple.svg"></a>

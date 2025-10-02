@@ -57,7 +57,7 @@ dotnet new WarperSan.BepInEx.Template --help
 
 Contributions, issues, and feedback are welcome!
 
-If your community has its own tweaks, feel free to [fork this template](https://github.com/WarperSan/Unity.Modding.Templates/fork) and adapt it to your needs.
+If your community wants their own version with certain elements predefined, feel free to [fork this template](https://github.com/WarperSan/Unity.Modding.Templates/fork) and adapt it to your needs.
 
 ## License
 

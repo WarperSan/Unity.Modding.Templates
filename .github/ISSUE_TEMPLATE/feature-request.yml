@@ -1,0 +1,30 @@
+name: Feature Request
+description: Suggest an idea for this project
+title: "[FEATURE] "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: issue-description
+    attributes:
+      label: Describe your issue (optional)
+      placeholder: Describe the issue you're trying to fix, if applicable.
+  - type: textarea
+    id: solution-description
+    attributes:
+      label: Describe the potential solution
+      placeholder: Describe the solution you would like to be implemented in as much details as you can.
+    validations:
+      required: true
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional context (optional)
+      placeholder: Put as much resources (links, images) to help us quickly start working on your feature.
+  - type: dropdown
+    id: project-type
+    attributes:
+      label: Project(s) Targeted
+      multiple: true
+      options:
+        - Package
+        - .NET Template

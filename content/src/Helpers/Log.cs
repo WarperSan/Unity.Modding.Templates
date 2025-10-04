@@ -1,4 +1,3 @@
-using System.Text;
 #if Logger_BepInEx
 using BepInEx.Logging;
 #endif
@@ -10,29 +9,12 @@ namespace PluginTemplate.Helpers;
 /// </summary>
 internal static class Log
 {
-    private static string GenerateMessage(object?[] data)
-    {
-        var message = new StringBuilder();
-
-        for (var i = 0; i < data.Length; i++)
-        {
-            var content = data[i] ?? "null";
-
-            message.Append(content);
-
-            if (i < data.Length - 1)
-                message.Append(' ');
-        }
-
-        return message.ToString();
-    }
-    
 #if Logger_BepInEx
     private static ManualLogSource? _logger;
 
     private static void LogSelf(string message, LogLevel level)
     {
-        _logger ??= Logger.CreateLogSource(MyPluginInfo.PLUGIN_GUID);
+        _logger ??= Logger.CreateLogSource(MyPluginInfo.PLUGIN_NAME);
         _logger?.Log(level, message);
     }
 #endif
@@ -40,10 +22,8 @@ internal static class Log
     /// <summary>
     ///     Logs information for developers that helps to debug the mod
     /// </summary>
-    public static void Debug(params object?[] data)
+    public static void Debug(string message)
     {
-        var message = GenerateMessage(data);
-
 #if Logger_System
         Console.WriteLine($"[DEBUG] {message}");
 #endif
@@ -58,10 +38,8 @@ internal static class Log
     /// <summary>
     ///     Logs information for players to know important steps of the mod
     /// </summary>
-    public static void Info(params object?[] data)
+    public static void Info(string message)
     {
-        var message = GenerateMessage(data);
-
 #if Logger_System
         Console.WriteLine($"[INFO] {message}");
 #endif
@@ -76,10 +54,8 @@ internal static class Log
     /// <summary>
     ///     Logs information for players to warn them about an unwanted state
     /// </summary>
-    public static void Warning(params object?[] data)
+    public static void Warning(string message)
     {
-        var message = GenerateMessage(data);
-
 #if Logger_System
         Console.WriteLine($"[WARNING] {message}");
 #endif
@@ -94,10 +70,8 @@ internal static class Log
     /// <summary>
     ///     Logs information for players to notify them of an error
     /// </summary>
-    public static void Error(params object?[] data)
+    public static void Error(string message)
     {
-        var message = GenerateMessage(data);
-
 #if Logger_System
         Console.WriteLine($"[ERROR] {message}");
 #endif

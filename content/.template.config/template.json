@@ -32,13 +32,6 @@
 			"defaultValue": "",
 			"replaces": "__DESCRIPTION__"
 		},
-		"Version": {
-			"type": "parameter",
-			"datatype": "text",
-			"displayName": "Initial Version",
-			"defaultValue": "1.0.0",
-			"replaces": "__VERSION__"
-		},
 		"Framework": {
 			"type": "parameter",
 			"datatype": "choice",

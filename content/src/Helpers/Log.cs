@@ -1,4 +1,3 @@
-using System;
 using BepInEx.Logging;
 
 namespace PluginTemplate.Helpers;

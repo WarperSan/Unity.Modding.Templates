@@ -1,21 +1,19 @@
-#if Patcher_Harmony
 using HarmonyLib;
 
 namespace PluginTemplate.Patches;
 
 [HarmonyPatch(typeof(string))]
-internal static class Example_Patches
+internal static class String_Patches
 {
-    [HarmonyPatch(nameof(string.Remove))]
     [HarmonyPrefix]
+    [HarmonyPatch(nameof(string.Remove))]
     private static void Remove_Prefix(string __instance)
     {
     }
 
-    [HarmonyPatch(nameof(string.Remove))]
     [HarmonyPostfix]
+    [HarmonyPatch(nameof(string.Remove))]
     private static void Remove_Postfix(string __instance)
     {
     }
 }
-#endif

@@ -22,7 +22,7 @@
 
         <!-- Package Files -->
         <ThunderstorePackageFile Include="$(ThunderstorePackageSource)README.md"/>
-        <ThunderstorePackageFile Include="$(ThunderstorePackageSource)icon2.png"/>
+        <ThunderstorePackageFile Include="$(ThunderstorePackageSource)icon.png"/>
         <ThunderstorePackageFile Include="$(ThunderstorePackageSource)LICENSE"/>
         <ThunderstorePackageFile Include="$(ThunderstorePackageSource)CHANGELOG.md"/>
 

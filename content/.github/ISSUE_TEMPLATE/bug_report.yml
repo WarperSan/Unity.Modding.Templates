@@ -1,32 +1,74 @@
 name: Bug Report
-description: Report a bug with this mod
+description: Report a bug in this mod
 labels: ["bug"]
+
 body:
   - type: textarea
     id: issue-description
     attributes:
-      label: Describe the bug
-      placeholder: Describe the bug in as much detail as you can.
+      label: Bug Description
+      description: A clear and concise description of the bug.
+      placeholder: What went wrong?
     validations:
       required: true
+
   - type: textarea
-    id: steps-description
+    id: steps-to-reproduce
     attributes:
       label: Steps to Reproduce
+      description: Provide step-by-step instructions to reproduce the issue.
       placeholder: |
-        Steps to reproduce the behavior:
         1. Go to '...'
-        2. Click on '....'
-        3. See error
+        2. Click on '...'
+        3. Observe the issue
     validations:
       required: true
+
   - type: textarea
-    id: expected-description
+    id: expected-behavior
     attributes:
-      label: Expected Behavior (Optional)
-      placeholder: Describe how the mod should work.
+      label: Expected Behavior
+      description: What you expected to happen instead.
+      placeholder: The mod should...
+    validations:
+      required: false
+
+  - type: textarea
+    id: actual-behavior
+    attributes:
+      label: Actual Behavior
+      description: What actually happened.
+      placeholder: Instead, the mod...
+    validations:
+      required: false
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Include relevant setup information.
+      placeholder: |
+        - Mod version:
+        - Game version:
+        - OS:
+        - Other mods (if applicable):
+    validations:
+      required: false
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs / Crash Reports
+      description: Paste any relevant logs or crash reports here.
+      render: shell
+    validations:
+      required: false
+
   - type: textarea
     id: additional-context
     attributes:
-      label: Additional context (optional)
-      placeholder: Put as much context (links, images) to help us quickly start working on your bug.
+      label: Additional Context
+      description: Add any other context, screenshots, or links that may help.
+      placeholder: Anything else that might help us diagnose the issue.
+    validations:
+      required: false

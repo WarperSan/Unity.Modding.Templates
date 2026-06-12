@@ -1,21 +1,45 @@
 name: Feature Request
-description: Suggest an idea for this mod
+description: Suggest a new idea or improvement for this mod
 labels: ["enhancement"]
+
 body:
   - type: textarea
-    id: issue-description
+    id: problem-description
     attributes:
-      label: Describe your issue (optional)
-      placeholder: Describe the issue you're trying to fix, if applicable.
+      label: Problem / Motivation
+      description: Describe the problem you're trying to solve. If this is not related to a problem, you can skip this section.
+      placeholder: |
+        What issue or limitation are you experiencing?
+        Why is this feature needed?
+    validations:
+      required: false
+
   - type: textarea
     id: solution-description
     attributes:
-      label: Describe the potential solution
-      placeholder: Describe the solution you would like to be implemented in as much details as you can.
+      label: Proposed Solution
+      description: Describe the feature or improvement you'd like to see implemented.
+      placeholder: |
+        What should be added or changed?
+        How should it work?
     validations:
       required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: Any alternative solutions or workarounds you've thought about.
+      placeholder: |
+        Have you considered other ways to solve this?
+    validations:
+      required: false
+
   - type: textarea
     id: additional-context
     attributes:
-      label: Additional context (optional)
-      placeholder: Put as much context (links, images) to help us quickly start working on your feature.
+      label: Additional Context
+      description: Add any other context, mockups, links, or screenshots.
+      placeholder: Helpful references, examples, or visuals.
+    validations:
+      required: false

@@ -7,11 +7,13 @@
 
         <!-- TODO: Add communities -->
         <!--<ThunderstoreCommunities></ThunderstoreCommunities>-->
-        
+
         <!-- TODO: Add categories -->
         <!--<ThunderstoreCategories></ThunderstoreCategories>-->
 
         <ThunderstoreToken>$(THUNDERSTORE_TOKEN)</ThunderstoreToken>
+
+        <ThunderstorePackageSource Condition="'$(ThunderstorePackageSource)' == ''">$(SolutionDir)</ThunderstorePackageSource>
     </PropertyGroup>
 
     <ItemGroup>
@@ -19,10 +21,10 @@
         <ThunderstoreFile Include="$(TargetPath)" Destination="plugins/"/>
 
         <!-- Package Files -->
-        <ThunderstorePackageFile Include="$(SolutionDir)README.md"/>
-        <ThunderstorePackageFile Include="$(SolutionDir)icon.png"/>
-        <ThunderstorePackageFile Include="$(SolutionDir)LICENSE"/>
-        <ThunderstorePackageFile Include="$(SolutionDir)CHANGELOG.md"/>
+        <ThunderstorePackageFile Include="$(ThunderstorePackageSource)README.md"/>
+        <ThunderstorePackageFile Include="$(ThunderstorePackageSource)icon2.png"/>
+        <ThunderstorePackageFile Include="$(ThunderstorePackageSource)LICENSE"/>
+        <ThunderstorePackageFile Include="$(ThunderstorePackageSource)CHANGELOG.md"/>
 
         <!-- Thunderstore Dependencies -->
         <!--<ThunderstoreDependency Include="TEAM-PACKAGE" Version="VERSION"/>-->

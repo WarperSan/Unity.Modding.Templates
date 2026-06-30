@@ -22,7 +22,7 @@ jobs:
           fetch-depth: 0
           
       - name: Setup .NET
-        uses: actions/setup-dotnet@v4
+        uses: actions/setup-dotnet@v5
 
       - name: Pack
         run: dotnet pack --configuration ${{ env.DOTNET_CONFIGURATION }}
@@ -44,7 +44,7 @@ jobs:
           path: ./nuget
 
       - name: Setup .NET
-        uses: actions/setup-dotnet@v4
+        uses: actions/setup-dotnet@v5
         
       - name: Deploy to NuGet
         run: dotnet nuget push ./nuget/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate

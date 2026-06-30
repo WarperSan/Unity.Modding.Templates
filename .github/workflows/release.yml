@@ -28,7 +28,7 @@ jobs:
         run: dotnet pack --configuration ${{ env.DOTNET_CONFIGURATION }}
 
       - name: Upload Artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: 'package'
           path: ./bin/${{ env.DOTNET_CONFIGURATION }}/*.nupkg

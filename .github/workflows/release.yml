@@ -38,7 +38,7 @@ jobs:
     needs: create
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/download-artifact@v5
+      - uses: actions/download-artifact@v8
         with:
           name: 'package'
           path: ./nuget
@@ -56,7 +56,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7
 
-      - uses: actions/download-artifact@v5
+      - uses: actions/download-artifact@v8
         with:
           name: 'package'
           path: ./nuget

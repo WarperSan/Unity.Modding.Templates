@@ -19,7 +19,7 @@
     <ItemGroup>
         <PackageReference
                 Include="Microsoft.Net.Compilers.Toolset"
-                Version="4.14.0"
+                Version="5.3.0"
                 PrivateAssets="all"/>
         <PackageReference Include="Hamunii.BepInEx.AutoPlugin" Version="2.1.0" PrivateAssets="all"/>
         <PackageReference Include="MinVer" Version="7.0.0" PrivateAssets="all"/>

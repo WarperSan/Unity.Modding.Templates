@@ -22,7 +22,7 @@
                 Version="5.9.0"
                 PrivateAssets="all"/>
         <PackageReference Include="Hamunii.BepInEx.AutoPlugin" Version="2.1.0" PrivateAssets="all"/>
-        <PackageReference Include="MinVer" Version="7.0.0" PrivateAssets="all"/>
+        <PackageReference Include="MinVer" Version="8.0.0" PrivateAssets="all"/>
     </ItemGroup>
 
     <!-- Modding Dependencies -->
